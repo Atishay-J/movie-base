@@ -1,0 +1,15 @@
+.moviesContainer {
+  background-color: #1c1c1c;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+@media only screen and (min-width: 768px) {
+  .moviesContainer {
+    column-gap: 3.5rem;
+    row-gap: 3rem;
+  }
+}

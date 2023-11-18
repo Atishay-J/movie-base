@@ -7,7 +7,7 @@ import { MovieContextProvider } from "./contexts";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <MovieContextProvider>
-    <App />
+      <App />
     </MovieContextProvider>
-  </React.StrictMode>
+  </React.StrictMode>,
 );

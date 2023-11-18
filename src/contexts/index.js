@@ -1,2 +1,2 @@
 import { MovieContextProvider } from "./movieContext";
-export {MovieContextProvider}
+export { MovieContextProvider };
