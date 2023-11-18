@@ -1,2 +1,3 @@
 import { MovieContextProvider } from "./movieContext";
-export { MovieContextProvider };
+import { FilteredMovieContextProvider } from "./filteredMovieContext";
+export { MovieContextProvider, FilteredMovieContextProvider };

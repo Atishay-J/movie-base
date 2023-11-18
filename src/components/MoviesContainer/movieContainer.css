@@ -5,6 +5,12 @@
   gap: 2rem;
   justify-content: center;
   align-items: flex-start;
+  color: white;
+  min-height: 93vh;
+}
+.moviesContainer__noResults {
+  align-self: center;
+  font-weight: 600;
 }
 
 @media only screen and (min-width: 768px) {

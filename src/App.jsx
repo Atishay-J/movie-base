@@ -1,13 +1,12 @@
-import { useState } from "react";
 import "./App.css";
 import MoviesContainer from "./components/MoviesContainer";
+import Navbar from "./components/Navbar";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <div className="App">
-    <MoviesContainer/> 
+      <Navbar />
+      <MoviesContainer />
     </div>
   );
 }
