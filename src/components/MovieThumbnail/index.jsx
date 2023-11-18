@@ -2,6 +2,7 @@ import React from "react";
 import { HiThumbUp } from "react-icons/hi";
 import { GoPlay } from "react-icons/go";
 import "./movieThumbnail.css";
+import { getMovieDateToShow } from "./getMovieDateToShow";
 
 export default function MovieThumbnail({
   movieName,
@@ -11,23 +12,7 @@ export default function MovieThumbnail({
   moviePosterImage,
   movieTrailerUrl,
 }) {
-  const movieDateSeprate = movieReleaseDate.split(" ");
-  const movieMonth = movieDateSeprate[0].slice(0, 3).toLowerCase();
-  const movieDate = movieDateSeprate[1].replace(",", "");
-  const movieYear = movieDateSeprate[2];
-  const currentYear = new Date().getFullYear().toString();
-
-  const movieDateToShow = {
-    title: currentYear === movieYear ? movieDate : movieMonth,
-    subTitle: currentYear === movieYear ? movieMonth : movieYear,
-  };
-  console.log({
-    movieDateSeprate,
-    movieMonth,
-    currentYear,
-    movieDate,
-    movieYear,
-  });
+  const movieDateToShow = getMovieDateToShow(movieReleaseDate);
 
   const addImageFallback = (event) => {
     event.currentTarget.src =
