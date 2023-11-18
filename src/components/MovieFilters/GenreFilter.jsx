@@ -1,19 +1,18 @@
 import React from "react";
-import { useMovieContext } from "../../contexts/movieContext";
 import DropdownCheckbox from "../DropDownCheckbox";
 import { useFilteredMovies } from "../../contexts/filteredMovieContext";
+import { genreList } from "./genreList";
 
-export default function LanguageFilter() {
-  const { languageList } = useMovieContext();
+export default function GenreFilter() {
   const { dispatch } = useFilteredMovies();
 
   const handleDropdownChange = (selectedOptions) => {
-    dispatch({ type: "SET_SELECTED_LANGUAGES", payload: selectedOptions });
+    dispatch({ type: "SET_SELECTED_GENRE", payload: selectedOptions });
   };
   return (
     <DropdownCheckbox
-      label="All Languages"
-      options={languageList}
+      label="All Genres"
+      options={genreList}
       onChange={handleDropdownChange}
     />
   );

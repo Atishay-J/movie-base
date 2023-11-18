@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { RxCaretDown } from "react-icons/rx";
 import "./dropdownCheckbox.css";
 
-const DropdownCheckbox = ({ options, onChange }) => {
+const DropdownCheckbox = ({ label, options, onChange }) => {
   const [selectedOptions, setSelectedOptions] = useState([]);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -22,7 +22,7 @@ const DropdownCheckbox = ({ options, onChange }) => {
   return (
     <div className="dropdown__checkbox">
       <button className="dropdown__checkbox__btn" onClick={handleDropDown}>
-        <label htmlFor="language">All Languages</label>
+        <label htmlFor="language">{label}</label>
         <RxCaretDown fontSize="1.2rem" />
       </button>
 
