@@ -16,6 +16,14 @@
   align-items: center;
   padding: 0.2rem 0.4rem;
   border-radius: 4px;
+  overflow: hidden;
+}
+.dropdown__checkbox__btn > label {
+  width: 10rem;
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .dropdown__checkbox__list__item {
   margin-bottom: 8px;

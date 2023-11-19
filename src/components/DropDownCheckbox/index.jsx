@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { RxCaretDown } from "react-icons/rx";
 import "./dropdownCheckbox.css";
 
-const DropdownCheckbox = ({ label, options, onChange }) => {
+const DropdownCheckbox = ({ label, options, selectedValues, onChange }) => {
   const [selectedOptions, setSelectedOptions] = useState([]);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -11,23 +11,29 @@ const DropdownCheckbox = ({ label, options, onChange }) => {
   };
 
   const handleCheckboxChange = (option) => {
-    const updatedOptions = selectedOptions.includes(option)
-      ? selectedOptions.filter((item) => item !== option)
-      : [...selectedOptions, option];
+    const updatedOptions = selectedValues.includes(option)
+      ? selectedValues.filter((item) => item !== option)
+      : [...selectedValues, option];
 
     setSelectedOptions(updatedOptions);
     onChange(updatedOptions);
   };
 
+  const dropdownLabel =
+    selectedValues.length > 0 ? selectedValues.join(", ") : "All " + label;
+
   return (
-    <div className="dropdown__checkbox">
+    <div
+      className="dropdown__checkbox"
+      // onBlur={handleDropDown}
+    >
       <button className="dropdown__checkbox__btn" onClick={handleDropDown}>
-        <label htmlFor="language">{label}</label>
+        <label htmlFor={label}>{dropdownLabel}</label>
         <RxCaretDown fontSize="1.2rem" />
       </button>
 
       <div
-        name="language"
+        name={label}
         className={`dropdown__checkbox__list dropdown__checkbox__list--${
           isDropdownOpen ? "active" : "inactive"
         }`}
@@ -38,7 +44,7 @@ const DropdownCheckbox = ({ label, options, onChange }) => {
               type="checkbox"
               id={option}
               value={option}
-              checked={selectedOptions.includes(option)}
+              checked={selectedValues.includes(option)}
               onChange={() => handleCheckboxChange(option)}
             />
             <label htmlFor={option}>{option}</label>

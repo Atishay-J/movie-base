@@ -5,15 +5,17 @@ import { useFilteredMovies } from "../../contexts/filteredMovieContext";
 
 export default function LanguageFilter() {
   const { languageList } = useMovieContext();
-  const { dispatch } = useFilteredMovies();
+  const { dispatch, selectedLanguages } = useFilteredMovies();
 
   const handleDropdownChange = (selectedOptions) => {
     dispatch({ type: "SET_SELECTED_LANGUAGES", payload: selectedOptions });
   };
+
   return (
     <DropdownCheckbox
-      label="All Languages"
+      label="Languages"
       options={languageList}
+      selectedValues={selectedLanguages}
       onChange={handleDropdownChange}
     />
   );

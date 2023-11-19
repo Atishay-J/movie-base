@@ -16,6 +16,14 @@ const movieReducer = (state, action) => {
       return { ...state, selectedLanguages: action.payload };
     case "SET_SELECTED_GENRE":
       return { ...state, selectedGenre: action.payload };
+    case "REMOVE_SELECTED_FILTER": {
+      const { filterName, filterTitle } = action.payload;
+
+      const filteredState = state[filterName].filter(
+        (filter) => filter !== filterTitle,
+      );
+      return { ...state, [filterName]: filteredState };
+    }
     default:
       return state;
   }
@@ -67,6 +75,9 @@ export const FilteredMovieContextProvider = ({ children }) => {
       value={{
         filteredMovies,
         dispatch,
+        state,
+        selectedLanguages,
+        selectedGenre,
       }}
     >
       {children}
