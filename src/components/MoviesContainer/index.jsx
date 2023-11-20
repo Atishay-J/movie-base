@@ -2,10 +2,13 @@ import React, { useState } from "react";
 import MovieThumbnail from "../MovieThumbnail";
 import "./movieContainer.css";
 import { useFilteredMovies } from "../../contexts/filteredMovieContext";
+import { useMovieContext } from "../../contexts/movieContext";
 import MovieTrailer from "../MovieTrailer";
+import { Oval } from "react-loader-spinner";
 
 export default function MoviesContainer() {
   const { filteredMovies } = useFilteredMovies();
+  const { isLoading } = useMovieContext();
   const areMoviesAvailable = filteredMovies.length > 0;
   const [showTrailerForMovie, setShowTrailerForMovie] = useState(null);
   const [showTrailerAtRow, setShowTrailerAtRow] = useState(null);
@@ -33,7 +36,7 @@ export default function MoviesContainer() {
     setShowTrailerAtRow(trailerRow);
   };
 
-  return (
+  return !isLoading ? (
     <section className="moviesContainer">
       {showTrailerForMovie?.EventCode && (
         <MovieTrailer
@@ -58,6 +61,10 @@ export default function MoviesContainer() {
       ) : (
         <h3 className="moviesContainer__noResults"> No Movies available</h3>
       )}
+    </section>
+  ) : (
+    <section className="moviesContainer">
+      <h3 className="moviesContainer__loading"> Loading...</h3>
     </section>
   );
 }
