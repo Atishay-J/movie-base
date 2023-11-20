@@ -11,6 +11,7 @@ export default function MovieThumbnail({
   movieUpVotePercentage,
   moviePosterImage,
   movieTrailerUrl,
+  playTrailer,
 }) {
   const movieDateToShow = getMovieDateToShow(movieReleaseDate);
 
@@ -36,7 +37,7 @@ export default function MovieThumbnail({
             {movieDateToShow.subTitle}
           </span>
         </div>
-        <div className="movieThumbnail__playIcon">
+        <div className="movieThumbnail__playIcon" onClick={playTrailer}>
           <GoPlay />
         </div>
         <div className="movieThumbnail__details">

@@ -1,10 +1,16 @@
 .moviesContainer {
   background-color: #1c1c1c;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: center;
-  align-items: flex-start;
+  /* display: flex; */
+  /* flex-wrap: wrap; */
+  /* gap: 2rem; */
+  /* justify-content: center; */
+  /* align-items: flex-start; */
+
+  display: grid;
+  grid-template-columns: auto;
+  align-items: center;
+  justify-content: space-evenly;
+  row-gap: 1.5rem;
   color: white;
   min-height: 93vh;
 }
@@ -15,7 +21,25 @@
 
 @media only screen and (min-width: 768px) {
   .moviesContainer {
-    column-gap: 3.5rem;
+    column-gap: 2rem;
     row-gap: 3rem;
+    grid-template-columns: repeat(5, auto);
+  }
+}
+/* Medium (600px to 900px) */
+@media (min-width: 600px) and (max-width: 900px) {
+  .moviesContainer {
+    /* column-gap: 3.5rem; */
+    /* row-gap: 3rem; */
+    grid-template-columns: repeat(2, auto);
+  }
+}
+
+/* Medium (900px to 1200px) */
+@media (min-width: 900px) and (max-width: 1200px) {
+  .moviesContainer {
+    /* column-gap: 3.5rem; */
+    /* row-gap: 3rem; */
+    grid-template-columns: repeat(3, auto);
   }
 }
