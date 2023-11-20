@@ -4,7 +4,6 @@ import MovieTrailerVideo from "./MovieTrailerVideo";
 import MovieTrailerDetails from "./MovieTrailerDetails";
 
 export default function MovieTrailer({ trailerRow, movieDetails }) {
-  console.log({ movieDetails });
   return (
     <div
       className="movieTrailer__container"

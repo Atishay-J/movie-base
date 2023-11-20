@@ -12,10 +12,7 @@ export default function MoviesContainer() {
   const [showTrailerForMovie, setShowTrailerForMovie] = useState(null);
   const [showTrailerAtRow, setShowTrailerAtRow] = useState(null);
 
-  console.log({ showTrailerForMovie });
-
   const getTrailerRow = (index) => {
-    console.log("indx here", index);
     const screenWidth = window.innerWidth;
     if (screenWidth >= 768) {
       return Math.floor(index / 5);

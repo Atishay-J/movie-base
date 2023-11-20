@@ -8,14 +8,11 @@ export const MovieContextProvider = ({ children }) => {
   const [languageList, setLanguageList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  console.log({ isLoading, movieData });
-
   const fetchAndSetMoviesData = async () => {
     const movies = await api.getMovies();
     setIsLoading(false);
     setMovieData(movies.moviesData);
     setLanguageList(movies.languageList);
-    console.log({ movies });
   };
 
   useEffect(() => {

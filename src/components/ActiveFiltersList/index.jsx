@@ -18,10 +18,8 @@ export default function ActiveFiltersList() {
         },
       });
     }
-    console.log({ filterName, filterTitle });
   };
 
-  console.log({ state, appliedFilters });
   return (
     <div className="activeFilterList__container" onClick={removeSelectedFilter}>
       <div>Applied Filters:</div>

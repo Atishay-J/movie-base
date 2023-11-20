@@ -10,7 +10,6 @@ import { useMovieContext } from "../movieContext";
 const FilteredMovieContext = createContext();
 
 const movieReducer = (state, action) => {
-  console.log({ state, action });
   switch (action.type) {
     case "SET_SELECTED_LANGUAGES":
       return { ...state, selectedLanguages: action.payload };
@@ -60,9 +59,7 @@ export const FilteredMovieContextProvider = ({ children }) => {
     setFilteredMovies(filteredMovies);
   };
 
-  console.log({ movieEntries });
   useEffect(() => {
-    // setFilteredMovies(movieEntries);
     updateMovieState();
   }, [
     totalNumberOfMovies,
