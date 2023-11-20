@@ -4,7 +4,6 @@ import "./movieContainer.css";
 import { useFilteredMovies } from "../../contexts/filteredMovieContext";
 import { useMovieContext } from "../../contexts/movieContext";
 import MovieTrailer from "../MovieTrailer";
-import { Oval } from "react-loader-spinner";
 
 export default function MoviesContainer() {
   const { filteredMovies } = useFilteredMovies();
