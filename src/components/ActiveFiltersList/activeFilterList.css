@@ -1,0 +1,20 @@
+.activeFilterPill {
+  background-color: #323232;
+  width: fit-content;
+  padding: 0.2rem 0.5rem;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  color: #717171;
+}
+.activeFilterList__container {
+  background-color: #1b1b1b;
+  color: #717171;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  padding: 1.5rem 0.3rem;
+}

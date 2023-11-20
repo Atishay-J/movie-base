@@ -1,0 +1,27 @@
+.navbar {
+  display: flex;
+  background: #000000;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  justify-content: space-between;
+  /* height: 5rem; */
+  padding: 1rem 0.5rem;
+}
+.navbar__logo {
+  color: white;
+  font-size: 1.5rem;
+  font-family: cursive, sans-serif;
+}
+
+@media only screen and (min-width: 768px) {
+  .navbar {
+    display: flex;
+    flex-direction: row;
+    background: #000000;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 5rem;
+    padding: 1rem 1.6rem;
+  }
+}
